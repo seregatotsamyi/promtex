@@ -23,6 +23,12 @@
   }
   &__logo-wrap {
     max-width: 100px;
+    @include adpt($bbig-r) {
+      max-width: 80px;
+    }
+    @include adpt($tab-r) {
+      max-width: 60px;
+    }
   }
   &__right {
     display: flex;
@@ -34,11 +40,31 @@
     margin-right: 40px;
     font-family: $secondFont;
     font-size: 20px;
+    @include adpt($bbig-r) {
+      font-size: 18px;
+    }
+    @include adpt($desm-r) {
+      font-size: 16px;
+    }
+    @include adpt($bmob-r) {
+      display: none;
+    }
     &:hover {
       opacity: 0.8;
     }
   }
   &__phone-icon {
     margin-right: 10px;
+  }
+  &__burger {
+    display: none;
+    @include adpt($tab-r) {
+      display: block;
+    }
+  }
+  &__btn {
+    @include adpt($tab-r) {
+      display: none;
+    }
   }
 }

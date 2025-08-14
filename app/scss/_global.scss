@@ -18,6 +18,9 @@ body {
   max-width: 1540px;
   margin: 0 auto;
   padding: 0 50px;
+  @include adpt($tab-r) {
+    padding: 0 15px;
+  }
 }
 
 .sr-only {
@@ -51,6 +54,10 @@ body {
   box-shadow: 0 2px 12px rgba(0, 0, 0, 0.2);
   transition: all 0.2s;
   border: 2px solid $white;
+  @include adpt($bbig-r) {
+    font-size: 16px;
+    padding: 10px 25px;
+  }
   &:hover {
     background-color: $accent;
     color: $white;
@@ -63,5 +70,35 @@ body {
       background-color: $white;
       color: $accent;
     }
+  }
+}
+.burger {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  flex-shrink: 0;
+  height: 35px;
+  padding: 5px;
+}
+
+.section {
+  padding: 100px 0;
+  @include adpt($bmob-r) {
+    padding: 70px 0;
+  }
+}
+.title {
+  font-family: $secondFont;
+  font-weight: 700;
+  font-size: 34px;
+  @include adpt($bbig-r) {
+    font-size: 32px;
+  }
+  @include adpt($tab-r) {
+    font-size: 28px;
+  }
+  @include adpt($stab-r) {
+    font-size: 26px;
   }
 }

@@ -6,6 +6,9 @@
   color: $white;
   justify-content: center;
   padding: 150px 0 100px;
+  @include adpt($tab-r) {
+    padding: 100px 0 60px;
+  }
   &::after {
     content: "";
     position: absolute;
@@ -35,6 +38,11 @@
     transition: all 0.2s;
     z-index: 2;
     animation: moveUpDown 2s linear infinite;
+    @include adpt($tab-r) {
+      width: 30px;
+      height: 30px;
+      bottom: 30px;
+    }
   }
   & .container {
     width: 100%;
@@ -43,18 +51,52 @@
   }
   &__inner {
     padding: 40px 0;
+    @include adpt($tab-r) {
+      padding: 30px 0;
+    }
+    @include adpt($bmob-r) {
+      padding-top: 50px;
+    }
   }
   &__title {
     font-family: $secondFont;
     font-size: 42px;
     font-weight: 700;
     margin-bottom: 60px;
+    @include adpt($bbig-r) {
+      font-size: 36px;
+    }
+    @include adpt($desm-r) {
+      font-size: 30px;
+    }
+    @include adpt($tab-r) {
+      font-size: 28px;
+    }
+    @include adpt($bmob-r) {
+      margin-bottom: 30px;
+      font-size: 26px;
+    }
   }
   &__text {
     font-weight: 500;
     font-size: 26px;
     margin-bottom: 60px;
     max-width: 789px;
+    @include adpt($bbig-r) {
+      font-size: 23px;
+    }
+    @include adpt($desm-r) {
+      font-size: 20px;
+      max-width: 600px;
+    }
+    @include adpt($tab-r) {
+      font-size: 18px;
+      max-width: 500px;
+      font-weight: 400;
+    }
+    @include adpt($bmob-r) {
+      font-size: 16px;
+    }
   }
 }
 

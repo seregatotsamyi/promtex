@@ -1,0 +1,70 @@
+.about {
+  background-color: $grey;
+  position: relative;
+  overflow: hidden;
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    z-index: 2;
+    @include adpt($stab-r) {
+      flex-direction: column;
+    }
+  }
+  &__bg {
+    position: absolute;
+    z-index: 0;
+    left: 0;
+    top: 0;
+    height: 100%;
+    width: auto;
+    pointer-events: none;
+    object-fit: cover;
+  }
+  &__left {
+    flex: 1;
+    margin-right: 100px;
+    @include adpt($tab-r) {
+      margin-right: 50px;
+    }
+    @include adpt($stab-r) {
+      margin-right: 0;
+      margin-bottom: 50px;
+    }
+  }
+  &__img-wrap {
+    max-width: 400px;
+    flex: 1;
+    @include adpt($bbig-r) {
+      max-width: 370px;
+    }
+    @include adpt($tab-r) {
+      max-width: 300px;
+    }
+  }
+  &__img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 1/1;
+    object-fit: contain;
+  }
+  &__title {
+    margin-bottom: 30px;
+  }
+  &__text-inner {
+    @include adpt($bmob-r) {
+      font-size: 15px;
+    }
+    & p:not(:last-child) {
+      margin-bottom: 15px;
+      @include adpt($bmob-r) {
+        margin-bottom: 12px;
+      }
+    }
+    & a {
+      color: $accent;
+      text-decoration: underline;
+    }
+  }
+}

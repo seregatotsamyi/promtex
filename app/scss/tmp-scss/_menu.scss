@@ -1,18 +1,68 @@
 .menu {
+  @include adpt($tab-r) {
+    position: fixed;
+    top: -15px;
+    left: -15px;
+    width: 100vw;
+    height: 100vh;
+    background-color: $accent;
+    z-index: 101;
+    padding: 50px 20px;
+    overflow-y: auto;
+    opacity: 0;
+    pointer-events: none;
+    transform: translateX(100%);
+    transition: all 0.2s;
+    &._open {
+      opacity: 1;
+      pointer-events: all;
+      transform: translateX(0);
+    }
+  }
   &__list {
     display: flex;
+    @include adpt($tab-r) {
+      flex-direction: column;
+    }
   }
   &__item {
+    @include adpt($tab-r) {
+      width: 100%;
+    }
     &:not(:last-child) {
       margin-right: 30px;
+      @include adpt($desm-r) {
+        margin-right: 20px;
+      }
+      @include adpt($tab-r) {
+        margin-right: 0;
+        margin-bottom: 10px;
+      }
     }
   }
   &__link {
     font-family: $secondFont;
     font-weight: 500;
     font-size: 18px;
+    @include adpt($bbig-r) {
+      font-size: 16px;
+    }
+    @include adpt($tab-r) {
+      font-size: 18px;
+      display: block;
+      padding: 5px 0;
+    }
     &:hover {
       opacity: 0.7;
+    }
+  }
+  &__burger {
+    display: none;
+    @include adpt($tab-r) {
+      display: block;
+      position: absolute;
+      top: 15px;
+      right: 15px;
     }
   }
 }
