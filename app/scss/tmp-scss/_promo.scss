@@ -1,0 +1,74 @@
+.promo {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  color: $white;
+  justify-content: center;
+  padding: 150px 0 100px;
+  &::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: #34323c;
+    opacity: 0.75;
+    z-index: 1;
+  }
+  &__bg {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+  }
+  &__decor {
+    pointer-events: none;
+    position: absolute;
+    bottom: 40px;
+    left: 50%;
+    transform: translateX(-50%);
+    transition: all 0.2s;
+    z-index: 2;
+    animation: moveUpDown 2s linear infinite;
+  }
+  & .container {
+    width: 100%;
+    position: relative;
+    z-index: 2;
+  }
+  &__inner {
+    padding: 40px 0;
+  }
+  &__title {
+    font-family: $secondFont;
+    font-size: 42px;
+    font-weight: 700;
+    margin-bottom: 60px;
+  }
+  &__text {
+    font-weight: 500;
+    font-size: 26px;
+    margin-bottom: 60px;
+    max-width: 789px;
+  }
+}
+
+@keyframes moveUpDown {
+  0% {
+    transform: translateX(-50%) translateY(0);
+  }
+  25% {
+    transform: translateX(-50%) translateY(-10%);
+  }
+  75% {
+    transform: translateX(-50%) translateY(10%);
+  }
+  100% {
+    transform: translateX(-50%) translateY(0);
+  }
+}

@@ -1,0 +1,18 @@
+.menu {
+  &__list {
+    display: flex;
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+    }
+  }
+  &__link {
+    font-family: $secondFont;
+    font-weight: 500;
+    font-size: 18px;
+    &:hover {
+      opacity: 0.7;
+    }
+  }
+}

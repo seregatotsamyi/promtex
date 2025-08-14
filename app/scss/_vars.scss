@@ -1,0 +1,41 @@
+$white: var(--white-color);
+$default: var(--default-color);
+$accent: var(--accent-color);
+$grey: var(--grey-color);
+
+$mainFont: var(--main-font);
+$secondFont: var(--second-font);
+
+:root {
+  --white-color: #ffffff;
+  --default-color: #151515;
+  --accent-color: #2a69bd;
+  --grey-color: #eeeeee;
+
+  /*шрифты*/
+  --main-font: "Inter", sans-serif;
+  --second-font: "Rubik", sans-serif;
+}
+
+$bbig-r: 1500;
+$big-r: 1380;
+$desm-r: 1280;
+$tab-r: 1024;
+$mtab-r: 992;
+$stab-r: 768;
+$bmob-r: 576;
+
+@mixin adpt($width) {
+  @media (max-width: #{$width}px) {
+    @content;
+  }
+}
+
+@mixin adpt-mob($width) {
+  @media (min-width: #{$width}px) {
+    @content;
+  }
+}
+
+@include adpt($bmob-r) {
+}

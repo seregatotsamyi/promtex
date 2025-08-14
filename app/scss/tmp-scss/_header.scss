@@ -1,0 +1,44 @@
+.header {
+  position: fixed;
+  z-index: 100;
+  top: 0;
+  padding: 15px 0;
+  left: 0;
+  width: 100%;
+  color: $white;
+  &._main {
+    & .header__inner {
+      background-color: rgba(#2a69bd, 0.7);
+    }
+  }
+  &__inner {
+    background-color: $accent;
+    box-shadow: 0 0 12px rgba(#000, 0.15);
+    backdrop-filter: blur(8px);
+    border-radius: 12px;
+    padding: 10px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+  }
+  &__logo-wrap {
+    max-width: 100px;
+  }
+  &__right {
+    display: flex;
+    align-items: center;
+  }
+  &__phone {
+    display: flex;
+    align-items: center;
+    margin-right: 40px;
+    font-family: $secondFont;
+    font-size: 20px;
+    &:hover {
+      opacity: 0.8;
+    }
+  }
+  &__phone-icon {
+    margin-right: 10px;
+  }
+}
