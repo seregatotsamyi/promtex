@@ -1,0 +1,163 @@
+.reviews {
+  background-color: $grey;
+  color: $default;
+  position: relative;
+  &__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-width: 0;
+    position: relative;
+    z-index: 3;
+  }
+  &__bg {
+    position: absolute;
+    z-index: 0;
+    right: 0;
+    top: 0;
+    height: 100%;
+    width: auto;
+    pointer-events: none;
+    object-fit: cover;
+  }
+  &__left {
+    width: 100%;
+    max-width: 400px;
+    margin-right: 80px;
+    flex-shrink: 0;
+    @include adpt($big-r) {
+      max-width: 350px;
+    }
+    @include adpt($tab-r) {
+      max-width: 310px;
+    }
+    @include adpt($stab-r) {
+      width: 180px;
+      margin-right: 50px;
+    }
+    @include adpt($bmob-r) {
+      display: none;
+    }
+  }
+  &__left-img {
+    object-fit: contain;
+    pointer-events: none;
+    height: auto;
+    border-radius: 12px;
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.15);
+  }
+  &__right {
+    max-width: 787px;
+    flex: 1;
+    min-width: 0;
+  }
+  &__title {
+    margin-bottom: 30px;
+    left: 0;
+    transform: translateX(0);
+    text-align: left;
+  }
+  &__text {
+    max-width: 684px;
+    font-size: 18px;
+    margin-bottom: 30px;
+    @include adpt($bbig-r) {
+      font-size: 16px;
+    }
+  }
+  &__arrows-wrap {
+    margin-top: 30px;
+    display: flex;
+  }
+  &__arrow {
+    width: 55px;
+    height: 55px;
+    background: $grad;
+    border-radius: 50%;
+    position: relative;
+    cursor: pointer;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    transition: all 0.3s;
+    @include adpt($bmob-r) {
+      width: 45px;
+      height: 45px;
+    }
+    &:hover {
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.35);
+    }
+    &::after {
+      content: "";
+      width: 32px;
+      height: 32px;
+      background-image: url("../images/icon/arrow.svg");
+      background-repeat: no-repeat;
+      background-size: contain;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      @include adpt($bmob-r) {
+        width: 28px;
+        height: 28px;
+      }
+    }
+    &._prev {
+      margin-right: 30px;
+      @include adpt($bmob-r) {
+        margin-right: 15px;
+      }
+      &::after {
+        transform: translate(-50%, -50%) rotate(180deg);
+      }
+    }
+  }
+  &__slide-wrap {
+    height: auto;
+    display: flex;
+  }
+  &__slide {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: flex-start;
+    background: $grad;
+    border-radius: 12px;
+    padding: 20px;
+    color: $white;
+  }
+  &__slide-text {
+    font-weight: 200;
+    font-style: italic;
+    font-size: 18px;
+    margin-bottom: 15px;
+    overflow: hidden;
+    display: -webkit-box;
+    -webkit-line-clamp: 6;
+    -webkit-box-orient: vertical;
+    @include adpt($bbig-r) {
+      font-size: 16px;
+    }
+    @include adpt($stab-r) {
+      font-size: 15px;
+    }
+  }
+  &__slide-name {
+    margin-bottom: 5px;
+    font-weight: 400;
+    @include adpt($stab-r) {
+      font-size: 14px;
+    }
+  }
+  &__slide-date {
+    font-size: 14px;
+    font-weight: 300;
+    opacity: 0.5;
+    @include adpt($stab-r) {
+      font-size: 13px;
+    }
+  }
+  & .swiper-wrapper {
+    align-items: stretch;
+  }
+}

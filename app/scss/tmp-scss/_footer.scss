@@ -1,4 +1,105 @@
 .footer {
   position: relative;
   margin-top: auto;
+  &__bottom {
+    text-align: center;
+    background-color: $accent;
+    color: $white;
+    font-weight: 500;
+    padding: 20px 0;
+  }
+  &__top {
+    padding: 50px 0;
+  }
+  &__social-block {
+    margin-bottom: 30px;
+  }
+  &__inner {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+    @include adpt($tab-r) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__left {
+    display: flex;
+    max-width: 900px;
+    width: 100%;
+    justify-content: space-between;
+    @include adpt($desm-r) {
+      max-width: 730px;
+    }
+    @include adpt($tab-r) {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  &__logo-wrap {
+    max-width: 100px;
+    margin-right: 50px;
+    @include adpt($tab-r) {
+      margin-right: 0;
+      margin-bottom: 50px;
+    }
+    @include adpt($bmob-r) {
+      margin-bottom: 30px;
+    }
+  }
+  &__list {
+    @include adpt($tab-r) {
+      margin-bottom: 40px;
+    }
+    @include adpt($bmob-r) {
+      margin-bottom: 30px;
+    }
+  }
+  &__item {
+    @include adpt($tab-r) {
+      text-align: center;
+    }
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    & a {
+      font-family: $secondFont;
+      font-weight: 500;
+      &:hover {
+        opacity: 0.8;
+      }
+      @include adpt($tab-r) {
+        text-align: center;
+      }
+    }
+  }
+  &__docs {
+    @include adpt($tab-r) {
+      margin-bottom: 40px;
+    }
+    @include adpt($bmob-r) {
+      margin-bottom: 30px;
+    }
+  }
+  &__docs-item {
+    @include adpt($tab-r) {
+      text-align: center;
+    }
+    &:not(:last-child) {
+      margin-bottom: 10px;
+    }
+    & a {
+      color: $accent;
+      text-decoration: underline;
+      @include adpt($tab-r) {
+        text-align: center;
+      }
+      @include adpt($bmob-r) {
+        font-size: 15px;
+      }
+      &:hover {
+        opacity: 0.8;
+      }
+    }
+  }
 }

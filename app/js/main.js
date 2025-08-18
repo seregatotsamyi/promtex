@@ -161,4 +161,26 @@ window.onload = function () {
     });
   });
   //menu
+
+  const swiperReviews = new Swiper(".reviews__slider", {
+    loop: true,
+    slideToClickedSlide: true,
+    spaceBetween: 15,
+    slidesPerView: 1.2,
+    navigation: {
+      nextEl: ".reviews__arrow._next",
+      prevEl: ".reviews__arrow._prev",
+    },
+    autoplay: {
+      delay: 6000,
+    },
+    breakpoints: {
+      769: {
+        slidesPerView: 1.8,
+      },
+      1025: {
+        slidesPerView: 2.2,
+      },
+    },
+  });
 };
