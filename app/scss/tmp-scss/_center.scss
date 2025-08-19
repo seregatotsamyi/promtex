@@ -1,0 +1,50 @@
+.center {
+  margin-top: 150px;
+  @include adpt($bbig-r) {
+    margin-top: 100px;
+  }
+  @include adpt($bmob-r) {
+    margin-top: 70px;
+  }
+  &__title {
+    margin-bottom: 20px;
+  }
+  &__subtitle {
+    margin-bottom: 50px;
+  }
+  &__text {
+    max-width: 1000px;
+    margin-bottom: 50px;
+  }
+  &__list {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include adpt($stab-r) {
+      flex-direction: column;
+    }
+  }
+  &__item {
+    &:not(:last-child) {
+      margin-right: 30px;
+      @include adpt($stab-r) {
+        margin-right: 0;
+        margin-bottom: 20px;
+      }
+    }
+    &:nth-child(2) {
+      & img {
+        max-width: 450px;
+        @include adpt($stab-r) {
+          max-width: 390px;
+        }
+      }
+    }
+  }
+  &__img {
+    max-width: 390px;
+    width: 100%;
+    object-fit: contain;
+    height: auto;
+  }
+}

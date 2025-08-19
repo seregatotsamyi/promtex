@@ -1,0 +1,81 @@
+.teacher {
+  background: linear-gradient(210deg, #eeeeee 0%, #e3e3e3 100%);
+  &__title {
+    margin-bottom: 50px;
+  }
+  &__list {
+    max-width: 1240px;
+    margin: 0 auto;
+  }
+  &__item {
+    display: flex;
+    &:not(:last-child) {
+      margin-bottom: 30px;
+    }
+    &:nth-child(even) {
+      display: flex;
+      justify-content: flex-end;
+      & .teacher__block {
+        flex-direction: row-reverse;
+        @include adpt($bmob-r) {
+          flex-direction: column;
+        }
+      }
+    }
+  }
+  &__block {
+    display: flex;
+    align-items: center;
+    max-width: 950px;
+    border-radius: 12px;
+    background: $grad;
+    color: $white;
+    @include adpt($bmob-r) {
+      padding: 20px;
+      flex-direction: column;
+    }
+  }
+  &__img-wrap {
+    flex-shrink: 0;
+    border-radius: 12px;
+    overflow: hidden;
+    @include adpt($tab-r) {
+      max-width: 140px;
+    }
+  }
+  &__img {
+    height: auto;
+    width: 100%;
+    object-fit: contain;
+  }
+  &__info {
+    padding: 20px;
+    @include adpt($bmob-r) {
+      padding: 20px 0;
+    }
+  }
+  &__name {
+    font-family: $secondFont;
+    font-size: 22px;
+    font-weight: 500;
+    margin-bottom: 10px;
+    @include adpt($tab-r) {
+      font-size: 20px;
+    }
+  }
+  &__st {
+    font-size: 18px;
+    font-style: italic;
+    font-weight: 500;
+    margin-bottom: 10px;
+    @include adpt($tab-r) {
+      font-size: 16px;
+    }
+  }
+  &__text {
+    font-size: 16px;
+    @include adpt($tab-r) {
+      font-size: 15px;
+    }
+  }
+}
